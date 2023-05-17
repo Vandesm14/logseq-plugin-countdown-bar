@@ -1,5 +1,5 @@
 {
-  "name": "logseq-plugin-todo-master",
+  "name": "logseq-plugin-timebar",
   "version": "1.10.3",
   "main": "dist/index.html",
   "scripts": {
@@ -36,7 +36,7 @@
     "vite-plugin-windicss": "1.8.5"
   },
   "logseq": {
-    "id": "_pengx17-logseq-plugin-todo-master",
-    "icon": "./logo.png"
+    "id": "thedevbird-logseq-plugin-timebar",
+    "icon": "./birdpfp.png"
   }
 }

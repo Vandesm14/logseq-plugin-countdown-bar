@@ -1,4 +1,4 @@
-import { Observable, debounceTime, startWith } from "rxjs";
+import { Observable, debounceTime, startWith } from 'rxjs';
 
 type ChangeEvent = Parameters<Parameters<typeof logseq.DB.onChanged>[0]>[0];
 

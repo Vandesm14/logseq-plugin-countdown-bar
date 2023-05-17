@@ -3,27 +3,27 @@ let melm: HTMLElement | undefined;
 
 function getMeasurementDiv() {
   // A div used for measurement
-  document.getElementById("__textLabelMeasure")?.remove();
+  document.getElementById('__textLabelMeasure')?.remove();
 
-  const pre = document.createElement("pre");
-  pre.id = "__textLabelMeasure";
+  const pre = document.createElement('pre');
+  pre.id = '__textLabelMeasure';
 
   Object.assign(pre.style, {
-    whiteSpace: "pre",
+    whiteSpace: 'pre',
     fontWeight: 600,
-    width: "auto",
-    border: "1px solid transparent",
-    padding: "4px",
-    margin: "0px",
-    opacity: "0",
-    position: "absolute",
-    top: "-500px",
-    left: "0px",
-    zIndex: "9999",
-    pointerEvents: "none",
-    userSelect: "none",
-    alignmentBaseline: "mathematical",
-    dominantBaseline: "mathematical",
+    width: 'auto',
+    border: '1px solid transparent',
+    padding: '4px',
+    margin: '0px',
+    opacity: '0',
+    position: 'absolute',
+    top: '-500px',
+    left: '0px',
+    zIndex: '9999',
+    pointerEvents: 'none',
+    userSelect: 'none',
+    alignmentBaseline: 'mathematical',
+    dominantBaseline: 'mathematical',
   });
 
   pre.tabIndex = -1;
@@ -32,15 +32,15 @@ function getMeasurementDiv() {
   return pre;
 }
 
-if (typeof window !== "undefined") {
+if (typeof window !== 'undefined') {
   melm = getMeasurementDiv();
 }
 
-let prevText = "";
+let prevText = '';
 let prevSize = [0, 0];
 
 export function clearPrevSize() {
-  prevText = "";
+  prevText = '';
 }
 
 export function getTextLabelSize(text: string) {
@@ -62,7 +62,7 @@ export function getTextLabelSize(text: string) {
   prevText = text;
 
   melm.textContent = text;
-  melm.style.fontFamily = "monospace";
+  melm.style.fontFamily = 'monospace';
 
   // In tests, offsetWidth and offsetHeight will be 0
   const width = melm.offsetWidth || 1;

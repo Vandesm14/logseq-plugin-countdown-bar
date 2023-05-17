@@ -1,5 +1,5 @@
 /* make the extension with tcss to make sure vite does not transpile it by default */
-.todo-master-progress-bar {
+.timebar-bar {
   max-width: 100%;
   height: 0.8rem;
   cursor: default;
@@ -9,7 +9,7 @@
   transform: translate(0, 2px);
 }
 
-.todo-master-progress-bar__bars {
+.timebar-bar__bars {
   display: flex !important;
   flex: 1;
   overflow: hidden;
@@ -20,12 +20,12 @@
   margin-left: 1px;
 }
 
-.todo-master-progress-bar__bar {
+.timebar-bar__bar {
   transition: all 0.2s;
   position: relative;
 }
 
-.todo-master-progress-bar__bar-inner-text {
+.timebar-bar__bar-inner-text {
   position: absolute;
   margin-left: 0.25rem;
   visibility: hidden;
@@ -33,55 +33,51 @@
   line-height: 14px;
 }
 
-.todo-master-progress-bar__bar:hover .todo-master-progress-bar__bar-inner-text {
+.timebar-bar__bar:hover .timebar-bar__bar-inner-text {
   visibility: visible;
 }
 
-.todo-master-progress-bar__bar-done {
+.timebar-bar__bar-fill {
   background-color: var(--ph-highlight-color-green);
 }
 
-.todo-master-progress-bar__bar-now {
-  background-color: var(--ph-highlight-color-blue);
-}
-
-.todo-master-progress-bar__bar-later {
+.timebar-bar__bar-empty {
   background-color: var(--ls-tertiary-background-color);
 }
 
-.todo-master-progress-bar__label {
+.timebar-bar__label {
   position: relative;
   white-space: nowrap;
   font-weight: 600;
   line-height: 14px;
 }
 
-.todo-master-progress-bar__fraction-label,
-.todo-master-progress-bar__percentage-label {
+.timebar-bar__fraction-label,
+.timebar-bar__percentage-label {
   position: absolute;
   left: 0;
   transition: all 0.2s;
 }
 
-.todo-master-progress-bar__percentage-label {
+.timebar-bar__percentage-label {
   opacity: 1;
 }
 
-.todo-master-progress-bar__fraction-label {
+.timebar-bar__fraction-label {
   opacity: 0;
 }
 
-.todo-master-progress-bar__label:hover
-  .todo-master-progress-bar__percentage-label {
+.timebar-bar__label:hover
+  .timebar-bar__percentage-label {
   opacity: 0;
 }
 
-.todo-master-progress-bar__label:hover
-  .todo-master-progress-bar__fraction-label {
+.timebar-bar__label:hover
+  .timebar-bar__fraction-label {
   opacity: 1;
 }
 
-.todo-master-progress-bar__target-not-found {
+.timebar-bar__target-not-found {
   color: red;
   transform: translate(0, -2px);
 }
