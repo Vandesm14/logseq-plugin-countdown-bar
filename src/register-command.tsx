@@ -226,34 +226,34 @@ export function registerCommand() {
     }
   });
 
-  async function insertMacro(mode: 'page' | 'block' = 'block') {
-    const block = await logseq.Editor.getCurrentBlock();
-    if (block && block.uuid) {
-      let content = '';
-      let maybeUUID = '';
-      if (mode === 'block') {
-        // We will from now on always use implicit block IDs to get rid of "Tracking target not found" issue
-        // maybeUUID = block.uuid;
-      } else {
-        const page = await logseq.Editor.getPage(block.page.id);
-        if (page?.originalName) {
-          maybeUUID = page.originalName;
-        }
-      }
-      if (maybeUUID) {
-        // Use base64 to avoid incorrectly rendering in properties
-        content = `{{renderer ${macroPrefix}-${encode(maybeUUID)}}}`;
-      } else {
-        content = `{{renderer ${macroPrefix}}}`;
-      }
-      await logseq.Editor.insertAtEditingCursor(content);
-    }
-  }
+  // async function insertMacro(mode: 'page' | 'block' = 'block') {
+  //   const block = await logseq.Editor.getCurrentBlock();
+  //   if (block && block.uuid) {
+  //     let content = '';
+  //     let maybeUUID = '';
+  //     if (mode === 'block') {
+  //       // We will from now on always use implicit block IDs to get rid of "Tracking target not found" issue
+  //       // maybeUUID = block.uuid;
+  //     } else {
+  //       const page = await logseq.Editor.getPage(block.page.id);
+  //       if (page?.originalName) {
+  //         maybeUUID = page.originalName;
+  //       }
+  //     }
+  //     if (maybeUUID) {
+  //       // Use base64 to avoid incorrectly rendering in properties
+  //       content = `{{renderer ${macroPrefix}-${encode(maybeUUID)}}}`;
+  //     } else {
+  //       content = `{{renderer ${macroPrefix}}}`;
+  //     }
+  //     await logseq.Editor.insertAtEditingCursor(content);
+  //   }
+  // }
 
-  logseq.Editor.registerSlashCommand(
-    '[TODO Master] Add Progress Bar',
-    async () => {
-      return insertMacro();
-    }
-  );
+  // logseq.Editor.registerSlashCommand(
+  //   '[Timebar] Add Progress Bar',
+  //   async () => {
+  //     return insertMacro();
+  //   }
+  // );
 }
